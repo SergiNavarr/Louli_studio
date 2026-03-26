@@ -37,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${quicksand.variable} ${playfair.variable} font-sans antialiased`}>
+      <body className={`${quicksand.variable} ${playfair.variable} font-sans antialiased overflow-x-hidden`}>
         {children}
         <Analytics />
       </body>
