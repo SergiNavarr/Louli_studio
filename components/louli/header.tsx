@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/button"
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
+  const num = '5493795131914';
+
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-4 py-4">
@@ -32,7 +34,7 @@ export function Header() {
               asChild
             >
               <a 
-                href="https://wa.me/5493794000000?text=Hola!%20Quiero%20reservar%20un%20turno" 
+                href={`https://wa.me/${num}?text=Hola!%20Quiero%20reservar%20un%20turno`} 
                 target="_blank" 
                 rel="noopener noreferrer"
               >
@@ -80,7 +82,7 @@ export function Header() {
               asChild
             >
               <a 
-                href="https://wa.me/5493794000000?text=Hola!%20Quiero%20reservar%20un%20turno" 
+                href={`https://wa.me/${num}?text=Hola!%20Quiero%20reservar%20un%20turno`}
                 target="_blank" 
                 rel="noopener noreferrer"
               >

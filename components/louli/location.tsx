@@ -68,12 +68,12 @@ export function Location() {
               <div>
                 <h3 className="font-serif text-xl text-foreground mb-2">Contacto</h3>
                 <a 
-                  href="https://wa.me/5493794000000" 
+                  href="https://wa.me/5493795131914" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-primary hover:text-primary/80 transition-colors font-medium"
                 >
-                  +54 9 379 400-0000
+                  +54 9 379 5131914
                 </a>
                 <p className="text-muted-foreground text-sm mt-1">
                   Respondemos en minutos por WhatsApp

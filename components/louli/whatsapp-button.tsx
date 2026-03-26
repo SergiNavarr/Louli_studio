@@ -2,10 +2,12 @@
 
 import { MessageCircle } from "lucide-react"
 
+const num = '5493795131914';
+
 export function WhatsAppButton() {
   return (
     <a
-      href="https://wa.me/5493794000000?text=Hola!%20Quiero%20consultar%20sobre%20los%20servicios"
+      href={`https://wa.me/${num}?text=Hola!%20Quiero%20reservar%20un%20turno`}
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-primary hover:bg-primary/90 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all hover:scale-105 group"

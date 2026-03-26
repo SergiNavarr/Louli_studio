@@ -18,7 +18,7 @@ export function Results() {
           </p>
           
           <Button variant="outline" className="gap-2 rounded-full" asChild>
-            <a href="https://instagram.com/TU_USUARIO" target="_blank" rel="noopener noreferrer">
+            <a href="https://instagram.com/loulibyln" target="_blank" rel="noopener noreferrer">
               <Instagram className="w-4 h-4" />
               Seguinos en Instagram
             </a>
