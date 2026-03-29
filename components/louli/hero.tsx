@@ -1,5 +1,6 @@
 import { MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 export function Hero() {
   return (
@@ -13,19 +14,19 @@ export function Hero() {
               <span className="text-primary">Corrientes</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl mx-auto lg:mx-0">
-              Hola, soy Louli y te ayudo a resaltar tu mejor versión con tratamientos 
-              pensados especialmente para vos. Un espacio donde el cuidado personal 
+              Hola, soy Louli y te ayudo a resaltar tu mejor versión con tratamientos
+              pensados especialmente para vos. Un espacio donde el cuidado personal
               se convierte en un momento de paz.
             </p>
             <div className="pt-4 w-full flex justify-center lg:justify-start">
-              <Button 
+              <Button
                 size="lg"
                 className="rounded-full w-full sm:w-auto h-auto px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all"
                 asChild
               >
-                <a 
-                  href="https://wa.me/5493794000000?text=Hola!%20Quiero%20agendar%20una%20cita" 
-                  target="_blank" 
+                <a
+                  href="https://wa.me/5493794000000?text=Hola!%20Quiero%20agendar%20una%20cita"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex flex-wrap justify-center items-center gap-2 sm:gap-3 text-center"
                 >
@@ -38,14 +39,14 @@ export function Hero() {
 
           {/* Image */}
           <div className="relative">
-            <div className="aspect-[4/5] rounded-3xl bg-secondary/50 overflow-hidden shadow-2xl relative z-10">
-              <div className="w-full h-full bg-gradient-to-br from-secondary to-accent/20 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center">
-                    <span className="font-serif text-5xl text-primary">L</span>
-                  </div>
-                </div>
-              </div>
+            <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl relative z-10">
+              <Image
+                src="/estudio.jpeg"
+                alt="Estudio de estética Louli"
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-500"
+                priority
+              />
             </div>
             <div className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 w-20 h-20 sm:w-24 sm:h-24 bg-primary/20 rounded-full blur-2xl z-0" />
             <div className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 w-24 h-24 sm:w-32 sm:h-32 bg-accent/20 rounded-full blur-2xl z-0" />

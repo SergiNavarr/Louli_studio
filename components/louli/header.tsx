@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -14,8 +15,14 @@ export function Header() {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="font-serif text-2xl md:text-3xl text-primary font-semibold tracking-wide">
-            Louli Studio
+          <a href="#" className="relative h-16 w-48 transition-transform hover:scale-105">
+            <Image
+              src="/logo_1.svg"
+              alt="Louli Studio Logo"
+              fill
+              className="object-contain" 
+              priority
+            />
           </a>
 
           {/* Desktop Navigation */}
@@ -29,13 +36,13 @@ export function Header() {
             <a href="#ubicacion" className="text-foreground/80 hover:text-primary transition-colors font-medium">
               Ubicación
             </a>
-            <Button 
+            <Button
               className="rounded-full px-6 bg-primary hover:bg-primary/90 text-primary-foreground"
               asChild
             >
-              <a 
-                href={`https://wa.me/${num}?text=Hola!%20Quiero%20reservar%20un%20turno`} 
-                target="_blank" 
+              <a
+                href={`https://wa.me/${num}?text=Hola!%20Quiero%20reservar%20un%20turno`}
+                target="_blank"
                 rel="noopener noreferrer"
               >
                 Reservar Turno
@@ -56,34 +63,34 @@ export function Header() {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <nav className="md:hidden pt-4 pb-2 flex flex-col gap-4">
-            <a 
-              href="#servicios" 
+            <a
+              href="#servicios"
               className="text-foreground/80 hover:text-primary transition-colors font-medium py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Servicios
             </a>
-            <a 
-              href="#resultados" 
+            <a
+              href="#resultados"
               className="text-foreground/80 hover:text-primary transition-colors font-medium py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Resultados
             </a>
-            <a 
-              href="#ubicacion" 
+            <a
+              href="#ubicacion"
               className="text-foreground/80 hover:text-primary transition-colors font-medium py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Ubicación
             </a>
-            <Button 
+            <Button
               className="rounded-full w-full bg-primary hover:bg-primary/90 text-primary-foreground"
               asChild
             >
-              <a 
+              <a
                 href={`https://wa.me/${num}?text=Hola!%20Quiero%20reservar%20un%20turno`}
-                target="_blank" 
+                target="_blank"
                 rel="noopener noreferrer"
               >
                 Reservar Turno
