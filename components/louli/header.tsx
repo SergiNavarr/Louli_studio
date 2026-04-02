@@ -15,7 +15,7 @@ export function Header() {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="relative h-16 w-48 transition-transform hover:scale-105">
+          <a href="#" className="relative h-10 w-28 md:h-16 md:w-48 transition-transform hover:scale-105">
             <Image
               src="/logo_1.svg"
               alt="Louli Studio Logo"
