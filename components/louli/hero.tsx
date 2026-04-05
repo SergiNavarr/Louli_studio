@@ -14,7 +14,7 @@ export function Hero() {
               <span className="text-primary">Corrientes</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl mx-auto lg:mx-0">
-              Hola, soy Louli y te ayudo a resaltar tu mejor versión con tratamientos
+              Hola, soy Lourdes y te ayudo a resaltar tu mejor versión con tratamientos
               pensados especialmente para vos. Un espacio donde el cuidado personal
               se convierte en un momento de paz.
             </p>
@@ -25,7 +25,7 @@ export function Hero() {
                 asChild
               >
                 <a
-                  href="https://wa.me/5493794000000?text=Hola!%20Quiero%20agendar%20una%20cita"
+                  href="https://wa.me/5493795131914?text=Hola!%20Quiero%20agendar%20una%20cita"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex flex-wrap justify-center items-center gap-2 sm:gap-3 text-center"

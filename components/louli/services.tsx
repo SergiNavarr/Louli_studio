@@ -1,26 +1,26 @@
 import { Sparkles, Eye, Heart, Flower2, ArrowRight } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 
+const num = '5493795131914';
+
 const services = [
   {
     icon: Sparkles,
-    title: "Limpieza Facial",
-    description: "Renová tu piel con una limpieza profunda que elimina impurezas y devuelve la luminosidad natural de tu rostro.",
+    title: "Cejas",
+    description: "Perfilado de cejas. Resaltá ti mirada com elegancia y naturalidad.",
+    num: num,
   },
   {
     icon: Eye,
-    title: "Pestañas y Cejas",
-    description: "Realzá tu mirada con diseño de cejas y lifting de pestañas. Lucí natural y radiante todos los días.",
+    title: "Pestañas",
+    description: "Realzá tu mirada con diseño de lifting de pestañas. Lucí natural y radiante todos los días.",
+    num: num,
   },
   {
     icon: Heart,
-    title: "Tratamientos Corporales",
-    description: "Sesiones de cuidado corporal pensadas para relajarte, tonificar y nutrir tu piel desde adentro.",
-  },
-  {
-    icon: Flower2,
-    title: "Masajes Relajantes",
-    description: "Un momento para vos. Masajes que alivian tensiones y te reconectan con tu bienestar interior.",
+    title: "Diseño de uñas",
+    description: "Dale a tus manos un toque de glamour con nuestro diseño de uñas. Elegí entre una variedad de estilos y colores para lucir siempre impecable.",
+    num: '5493794063454',
   },
 ]
 
@@ -37,7 +37,7 @@ export function Services() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service) => (
             <Card 
               key={service.title}
@@ -56,7 +56,7 @@ export function Services() {
                   {service.description}
                 </p>
                 <a 
-                  href="https://wa.me/5493794000000?text=Hola!%20Quiero%20consultar%20sobre%20el%20tratamiento%20de%20" 
+                  href={`https://wa.me/${service.num}?text=Hola!%20Quiero%20consultar%20sobre%20el%20tratamiento%20de%20${service.title}`} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-primary font-medium text-sm hover:gap-3 transition-all"
