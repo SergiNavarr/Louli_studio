@@ -1,74 +1,81 @@
-import { Sparkles, Eye, Heart, Flower2, ArrowRight } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card , CardContent} from "@/components/ui/card"
+import { AspectRatio } from "@/components/ui/aspect-ratio"
+import Image from "next/image"
+import { CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 
 const num = '5493795131914';
 
 const services = [
   {
-    icon: Sparkles,
-    title: "Cejas",
-    description: "Perfilado de cejas. Resaltá ti mirada com elegancia y naturalidad.",
-    num: num,
+    title: "Lifting de Pestañas",
+    description: "Realza tu mirada con un arqueado natural y duradero.",
+    image: "/pestanias.jpeg",
+    whatsappLink: `https://wa.me/${num}?text=Hola!%20Me%20interesaría%20pedir%20un%20turno%20para%20Lifting%20de%20Pestañas`,
   },
   {
-    icon: Eye,
-    title: "Pestañas",
-    description: "Realzá tu mirada con diseño de lifting de pestañas. Lucí natural y radiante todos los días.",
-    num: num,
+    title: "Perfilado de cejas",
+    description: "Define tu forma de cejas con precisión y estilo.",
+    image: "/cejas.jpeg",
+    whatsappLink: `https://wa.me/${num}?text=Hola!%20Me%20interesaría%20pedir%20un%20turno%20para%20Perfilado%20de%20cejas`,
   },
   {
-    icon: Heart,
     title: "Diseño de uñas",
-    description: "Dale a tus manos un toque de glamour con nuestro diseño de uñas. Elegí entre una variedad de estilos y colores para lucir siempre impecable.",
-    num: '5493794063454',
+    description: "Transforma tu apariencia con un diseño elegante y duradero.",
+    image: "/unias.jpeg",
+    whatsappLink: "https://wa.me/5493794063454?text=Hola!%20Me%20interesaría%20pedir%20un%20turno%20para%20Diseño%20de%20uñas",
   },
 ]
 
 export function Services() {
   return (
-    <section id="servicios" className="py-16 md:py-24 bg-secondary/30">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-4">
-            Mis Tratamientos
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Cada tratamiento está pensado con cariño para que vivas una experiencia única de cuidado personal
-          </p>
-        </div>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service) => (
-            <Card 
-              key={service.title}
-              className="group bg-card border-border/50 rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden"
+    <section className="py-20 px-4" id="servicios">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-3xl font-bold text-center mb-12 text-primary">Mis Tratamientos</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          {services.map((service, index) => (
+            <a 
+              href={service.whatsappLink} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              key={index}
+              className="block no-underline"
             >
-              <CardContent className="p-6 md:p-8">
-                <div className="mb-6">
-                  <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
-                    <service.icon className="w-7 h-7 text-accent" />
+              <Card 
+                className="group h-full overflow-hidden border-none shadow-sm hover:shadow-xl transition-all duration-300 bg-card cursor-pointer"
+              >
+                {/* Contenedor de Imagen */}
+                <div className="p-3 pb-0">
+                  <div className="overflow-hidden rounded-2xl"> 
+                    <AspectRatio ratio={4 / 3}>
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                    </AspectRatio>
                   </div>
                 </div>
-                <h3 className="font-serif text-xl text-foreground mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                  {service.description}
-                </p>
-                <a 
-                  href={`https://wa.me/${service.num}?text=Hola!%20Quiero%20consultar%20sobre%20el%20tratamiento%20de%20${service.title}`} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-primary font-medium text-sm hover:gap-3 transition-all"
-                >
-                  Consultar
-                  <ArrowRight className="w-4 h-4" />
-                </a>
-              </CardContent>
-            </Card>
+
+                <CardHeader className="pt-6 px-6">
+                  <CardTitle className="text-xl font-semibold leading-tight text-foreground group-hover:text-primary transition-colors">
+                    {service.title}
+                  </CardTitle>
+                </CardHeader>
+                
+                <CardContent className="px-6 pb-8">
+                  <CardDescription className="text-sm leading-relaxed text-muted-foreground italic">
+                    {service.description}
+                  </CardDescription>
+                  <p className="mt-4 text-xs font-medium text-primary uppercase tracking-wider">
+                    Solicitar Turno →
+                  </p>
+                </CardContent>
+              </Card>
+            </a>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }
